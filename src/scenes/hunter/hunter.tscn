@@ -6,9 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_p7r7f"]
 [ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
 [ext_resource type="Texture2D" uid="uid://bbmcamxvwrkcb" path="res://scenes/hunter/assets/ch_standing_left.png" id="5_fggcs"]
+[ext_resource type="Texture2D" uid="uid://bii4sk45a2sba" path="res://scenes/hunter/assets/sleeping1.png" id="5_m8gdn"]
 [ext_resource type="Texture2D" uid="uid://d2bukb81ha4i0" path="res://scenes/hunter/assets/ch_standing_right.png" id="6_5y8yd"]
+[ext_resource type="Texture2D" uid="uid://dsj5s7ngdqats" path="res://scenes/hunter/assets/sleeping2.png" id="6_imobt"]
+[ext_resource type="Texture2D" uid="uid://bjelgmfb7r5by" path="res://scenes/hunter/assets/getup_1.png" id="6_v44sy"]
 [ext_resource type="Texture2D" uid="uid://4u2vu3vc0eqh" path="res://scenes/hunter/assets/ch_standing_up.png" id="7_m8gdn"]
+[ext_resource type="Texture2D" uid="uid://c7bvr0pungixe" path="res://scenes/hunter/assets/getup_2.png" id="7_pi752"]
 [ext_resource type="Texture2D" uid="uid://duuperwmcwlr" path="res://scenes/hunter/assets/ch_going_down_1.png" id="8_imobt"]
+[ext_resource type="Texture2D" uid="uid://cecus6t44o8uu" path="res://scenes/hunter/assets/getup_3.png" id="8_qwhmc"]
 [ext_resource type="Texture2D" uid="uid://c3m6cyuwfn2e6" path="res://scenes/hunter/assets/ch_going_down_2.png" id="9_eyhhx"]
 [ext_resource type="Texture2D" uid="uid://dyrcdok32w6iu" path="res://scenes/hunter/assets/ch_going_left_1.png" id="10_v44sy"]
 [ext_resource type="Texture2D" uid="uid://c4f87gu645nau" path="res://scenes/hunter/assets/ch_going_left_2.png" id="11_pi752"]
@@ -253,6 +258,37 @@ radius = 21.0
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_m8gdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v44sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pi752")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qwhmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sd5u0")
+}],
+"loop": 0,
+"name": &"getup",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m8gdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_imobt")
+}],
+"loop": 1,
+"name": &"sleep",
+"speed": 0.6
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("4_sd5u0")
 }],
 "loop": 1,
@@ -390,4 +426,6 @@ texture = ExtResource("3_2810g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
 sprite_frames = SubResource("SpriteFrames_2gkgx")
-animation = &"stand_left"
+animation = &"getup"
+frame = 4
+frame_progress = 1.0

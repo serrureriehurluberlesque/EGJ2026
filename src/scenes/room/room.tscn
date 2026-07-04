@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://u0n7ux2ewc60" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
+[ext_resource type="Texture2D" uid="uid://18y3lcnb82lu" path="res://scenes/room/assets/split-screen-human.png" id="5_7jj40"]
 [ext_resource type="Texture2D" uid="uid://drd8c6uxonf4u" path="res://scenes/room/assets/character_large.png" id="5_w7vtx"]
 [ext_resource type="Texture2D" uid="uid://bqbf2loss2l5w" path="res://scenes/room/assets/mosquito_large.png" id="6_gui0a"]
+[ext_resource type="FontFile" uid="uid://ccy51dkjijaio" path="res://fonts/strictInverted/zxSpectrumStrictInverted.woff" id="7_68b7a"]
+[ext_resource type="Texture2D" uid="uid://ehgs8edn4tkh" path="res://scenes/room/assets/split-screen-mosquito.png" id="7_dv301"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vaubn"]
 friction = 0.0
@@ -39,6 +42,12 @@ distance = -89.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_68b7a"]
 distance = -89.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68b7a"]
+bg_color = Color(1, 1, 1, 0.8784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5g04"]
+bg_color = Color(1, 1, 1, 0.8784314)
 
 [node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
@@ -109,7 +118,7 @@ physics_material_override = SubResource("PhysicsMaterial_vaubn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WallDown2" unique_id=1917573707]
 shape = SubResource("WorldBoundaryShape2D_68b7a")
 
-[node name="EndScreen" type="Control" parent="." unique_id=847588465]
+[node name="Controls" type="Control" parent="." unique_id=847588465]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -120,14 +129,13 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HunterWins" type="Control" parent="EndScreen" unique_id=1067281895]
+[node name="HunterWins" type="Control" parent="Controls" unique_id=1067281895]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BG" type="ColorRect" parent="EndScreen/HunterWins" unique_id=2011952292]
+[node name="BG" type="TextureRect" parent="Controls/HunterWins" unique_id=1525235065]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -140,75 +148,125 @@ offset_right = 100.0
 offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.92941177, 0.8039216, 0.7764706, 1)
+texture = ExtResource("5_7jj40")
 
-[node name="Human" type="TextureRect" parent="EndScreen/HunterWins" unique_id=712493525]
-layout_mode = 0
-offset_left = -95.0
-offset_top = -80.0
-offset_bottom = 69.0
-texture = ExtResource("5_w7vtx")
-
-[node name="Label" type="Label" parent="EndScreen/HunterWins" unique_id=80232947]
-layout_mode = 0
-offset_left = 21.0
-offset_top = -19.0
-offset_right = 81.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 24
-text = "HUMAN
-WINS!"
-
-[node name="MosquitoWins" type="Control" parent="EndScreen" unique_id=1017674830]
-unique_name_in_owner = true
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BG" type="ColorRect" parent="EndScreen/MosquitoWins" unique_id=1731967509]
+[node name="Human" type="TextureRect" parent="Controls/HunterWins" unique_id=712493525]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -140.0
-offset_top = -110.0
-offset_right = 100.0
-offset_bottom = 70.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.63529414, 0.8352941, 0.8352941, 1)
-
-[node name="Mosquito" type="TextureRect" parent="EndScreen/MosquitoWins" unique_id=611311913]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -76.0
+anchors_preset = -1
+anchor_left = -4.925
+anchor_top = -4.0
+anchor_right = -2.55
+anchor_bottom = -0.275
+offset_left = 95.0
+offset_top = 80.0
 offset_right = 95.0
-offset_bottom = 52.0
+offset_bottom = 80.0
+texture = ExtResource("5_w7vtx")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Label" parent="Controls/HunterWins" unique_id=80232947]
+layout_mode = 0
+offset_left = -117.0
+offset_top = 52.0
+offset_right = -5.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_68b7a")
+text = "- CONTROLS-"
+
+[node name="WASD" type="RichTextLabel" parent="Controls/HunterWins/Controls" unique_id=1915743447]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.5
+offset_right = 121.0
+offset_bottom = 34.5
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/bold_font = ExtResource("7_68b7a")
+bbcode_enabled = true
+text = "[b]W[/b],[b]A[/b],[b]S[/b],[b]D[/b] - Move"
+
+[node name="E" type="RichTextLabel" parent="Controls/HunterWins/Controls" unique_id=1867153748]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 4.5
+offset_right = 114.0
+offset_bottom = 18.5
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/bold_font = ExtResource("7_68b7a")
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0][b]E[/b] - Attack[/pulse]"
+
+[node name="MosquitoWins" type="Control" parent="Controls" unique_id=1017674830]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="TextureRect" parent="Controls/MosquitoWins" unique_id=220941839]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_dv301")
+
+[node name="Mosquito" type="TextureRect" parent="Controls/MosquitoWins" unique_id=611311913]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -48.0
+offset_right = 113.0
+offset_bottom = 80.0
 texture = ExtResource("6_gui0a")
 flip_h = true
 
-[node name="Label" type="Label" parent="EndScreen/MosquitoWins" unique_id=1743875526]
+[node name="Controls" type="Label" parent="Controls/MosquitoWins" unique_id=1743875526]
 layout_mode = 0
-offset_left = -99.0
-offset_top = -19.0
-offset_right = -3.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 24
-text = "MOSQUITO
-WINS!"
+offset_left = 7.0
+offset_top = -86.0
+offset_right = 119.0
+offset_bottom = -51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_v5g04")
+text = "- CONTROLS -"
 
-[node name="Label" type="RichTextLabel" parent="EndScreen" unique_id=1974293594]
+[node name="WASD" type="RichTextLabel" parent="Controls/MosquitoWins/Controls" unique_id=1022265406]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -96.0
-offset_top = 70.0
-offset_right = 96.0
-offset_bottom = 93.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.5
+offset_right = 121.0
+offset_bottom = 34.5
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/bold_font = ExtResource("7_68b7a")
 bbcode_enabled = true
-text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0]- SPACE to get revenge -[/pulse]"
+text = "Arrows - Move"
+
+[node name="E" type="RichTextLabel" parent="Controls/MosquitoWins/Controls" unique_id=709708777]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 5.0
+offset_right = 134.0
+offset_bottom = 26.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_fonts/bold_font = ExtResource("7_68b7a")
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0][b]SHIFT[/b] - Attack[/pulse]"

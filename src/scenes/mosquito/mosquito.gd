@@ -27,5 +27,15 @@ func attack():
 	$Attack.show()
 	is_attacking = true
 	await get_tree().create_timer(1).timeout
+	bit()
 	$Attack.hide()
 	is_attacking = false
+
+func bit():
+	for body in $Attack/Area.get_overlapping_bodies():
+		if "biten" in body:
+			body.biten()
+
+func slap():
+	print("slapped")
+	slapped.emit()

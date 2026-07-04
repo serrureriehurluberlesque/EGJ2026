@@ -49,7 +49,14 @@ func attack():
 	var key_id: int = anim.track_find_key(track_index, 0.6)
 	anim.track_insert_key(track_index, key_id, ATTACK_DELTA)
 	$AnimationPlayer.play("slap")
-	
+
+func hit():
+	for body in $Attack/Area.get_overlapping_bodies():
+		if "slap" in body:
+			body.slap()
+		if "self_slap" in body:
+			body.self_slap()
+
 func move_animation(direction, velocity):
 	face_direction = main_direction_str(direction)
 	animation_to_play = ("walk" if velocity.length() > 0.3 else "stand") + "_" +face_direction
@@ -62,3 +69,7 @@ func main_direction_str(direction) -> String:
 		else:
 			face_direction = "up" if direction.y < 0 else "down"
 	return face_direction
+
+func biten():
+	print("bitten")
+	bit.emit()

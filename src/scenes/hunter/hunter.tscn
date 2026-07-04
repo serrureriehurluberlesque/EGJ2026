@@ -145,6 +145,20 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"hit"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fev3k"]
 _data = {
@@ -277,6 +291,8 @@ libraries/ = SubResource("AnimationLibrary_fev3k")
 
 [node name="Area" type="Area2D" parent="Attack" unique_id=2026126006]
 visible = false
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area" unique_id=1458373268]
 position = Vector2(0, -7)

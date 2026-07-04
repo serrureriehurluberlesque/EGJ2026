@@ -6,10 +6,9 @@ var bit : int
 var slapped : int
 var t : float
 
-
 func _ready() -> void:
 	$Hunter.connect("bit", bite)
-	$Hunter.connect("slapped", slap)
+	$Mosquito.connect("slapped", slap)
 
 func bite() -> void:
 	bit += 1

@@ -32,17 +32,19 @@ func _input(event):
 		attack()
 		
 func attack():
-	$Attack.show()
-	is_attacking = true
-	await get_tree().create_timer(0.9).timeout
-	bit()
-	$Attack/Impact.show()
-	await get_tree().create_timer(0.1).timeout
-	$Attack/Impact.hide()
-	$Attack.hide()
-	is_attacking = false
+	if not is_attacking:
+		$Attack.show()
+		is_attacking = true
+		await get_tree().create_timer(0.9).timeout
+		bit()
+		$Attack/Impact.show()
+		await get_tree().create_timer(0.1).timeout
+		$Attack/Impact.hide()
+		$Attack.hide()
+		is_attacking = false
 
 func bit():
+	print("bit")
 	for body in $Attack/Area.get_overlapping_bodies():
 		if "biten" in body:
 			body.biten()

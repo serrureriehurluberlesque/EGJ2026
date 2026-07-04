@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cy2kygsnty484" path="res://scenes/room/room.gd" id="1_8xru0"]
 [ext_resource type="Texture2D" uid="uid://bua4itwwxrh1j" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
+[ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
+[ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
 
 [node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
@@ -10,3 +12,7 @@ script = ExtResource("1_8xru0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318848514]
 texture = ExtResource("2_kxljb")
+
+[node name="Hunter" parent="." unique_id=1841461092 instance=ExtResource("2_y1kpu")]
+
+[node name="Mosquito" parent="." unique_id=1938226174 instance=ExtResource("3_vaubn")]

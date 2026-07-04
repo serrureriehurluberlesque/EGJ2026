@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@export var acceleration_factor = 0.8
+@export var acceleration_factor = 0.9
 
 var previous_velocity := Vector2(0, 0)
 var human_velocity := Vector2(0, 0)
@@ -17,7 +17,7 @@ func get_input():
 	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
 	
 	if near_human:
-		velocity = (human_velocity + 5 * velocity) / (1 + 5 * acceleration_factor)
+		velocity = (human_velocity + 4 * velocity) / (1 + 4 * acceleration_factor)
 		
 	previous_velocity = velocity
 	human_velocity = Vector2(0, 0)

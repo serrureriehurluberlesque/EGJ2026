@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://buwupwev8a40a"]
+
+[ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
+[ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw6bw"]
+radius = 25.0
+
+[node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
+script = ExtResource("1_1pda7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996934396]
+texture = ExtResource("2_myiam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1457078639]
+shape = SubResource("CircleShape2D_jw6bw")

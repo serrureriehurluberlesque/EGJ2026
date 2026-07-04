@@ -27,6 +27,7 @@ func _input(event):
 		attack()
 		
 func attack():
+	%Attack.rotation = direction.angle() + PI / 2
 	%Attack.position = ATTACK_DELTA * direction
 	%Attack.show()
 	is_attacking = true

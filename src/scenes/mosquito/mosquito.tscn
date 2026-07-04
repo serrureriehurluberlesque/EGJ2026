@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
 [ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
+[ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_7j1pm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3veov"]
 radius = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uavd5"]
-radius = 1.0
+radius = 3.0
 
 [node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
 z_index = 1
@@ -27,3 +28,8 @@ shape = SubResource("CircleShape2D_3veov")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack/Area" unique_id=1365635527]
 shape = SubResource("CircleShape2D_uavd5")
+
+[node name="Impact" type="Sprite2D" parent="Attack" unique_id=1205500905]
+visible = false
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_7j1pm")

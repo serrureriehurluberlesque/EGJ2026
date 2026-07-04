@@ -59,8 +59,10 @@ texture = ExtResource("2_kxljb")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
 
 [node name="Hunter" parent="." unique_id=1841461092 instance=ExtResource("2_y1kpu")]
+position = Vector2(-45, 0)
 
 [node name="Mosquito" parent="." unique_id=1938226174 instance=ExtResource("3_vaubn")]
+position = Vector2(54, 0)
 
 [node name="WallLeft" type="StaticBody2D" parent="." unique_id=1909614442]
 physics_material_override = SubResource("PhysicsMaterial_vaubn")

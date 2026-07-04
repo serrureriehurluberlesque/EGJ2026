@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @export var speed = 400
-@export var acceleration_factor = 0.9
+@export var acceleration_factor = 0.8
 
 var previous_velocity := Vector2(0, 0)
+var human_velocity := Vector2(0, 0)
+var near_human = false
 var is_attacking = false
 
 signal slapped
@@ -13,7 +15,13 @@ func get_input():
 	if is_attacking:
 		input_direction = Vector2()
 	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
+	
+	if near_human:
+		velocity = (human_velocity + velocity) / (1 + acceleration_factor)
+		
 	previous_velocity = velocity
+	human_velocity = Vector2(0, 0)
+	near_human = false
 
 func _physics_process(delta):
 	get_input()
@@ -26,8 +34,11 @@ func _input(event):
 func attack():
 	$Attack.show()
 	is_attacking = true
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
 	bit()
+	$Attack/Impact.show()
+	await get_tree().create_timer(0.1).timeout
+	$Attack/Impact.hide()
 	$Attack.hide()
 	is_attacking = false
 
@@ -39,3 +50,7 @@ func bit():
 func slap():
 	print("slapped")
 	slapped.emit()
+
+func slow(v):
+	human_velocity = v
+	near_human = true

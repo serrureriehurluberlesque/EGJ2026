@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const ATTACK_DELTA = 25 # px
 
-@export var speed = 200
+@export var speed = 40
 @export var acceleration_factor = 0.6
 var previous_velocity := Vector2(0, 0)
 @export var direction: Vector2 = Vector2(1.0, 0.0)
@@ -35,6 +35,9 @@ func _physics_process(delta):
 	if not is_attacking:
 		get_input()
 		move_and_slide()
+	for body in $Area2D.get_overlapping_bodies():
+		if "slow" in body:
+			body.slow(velocity)
 
 func _input(event):
 	if Input.is_action_pressed("hunter_attack"):

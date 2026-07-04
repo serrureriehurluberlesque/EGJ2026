@@ -3,7 +3,7 @@ extends CharacterBody2D
 const ATTACK_DELTA = 25 # px
 
 @export var speed = 200
-@export var acceleration_factor = 0.75
+@export var acceleration_factor = 0.6
 var previous_velocity := Vector2(0, 0)
 @export var direction: Vector2 = Vector2(1.0, 0.0)
 @onready var _animated_sprite = $AnimatedSprite2D
@@ -18,8 +18,7 @@ func get_input():
 	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
 	previous_velocity = velocity
 	
-	if input_direction:
-		direction = velocity.limit_length()
+	direction = velocity.limit_length()
 
 func _process(delta):
 	if is_attacking:

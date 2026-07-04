@@ -141,6 +141,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1458373268]
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_jw6bw")
 
 [node name="Hand" type="Sprite2D" parent="Attack" unique_id=1882557809]

@@ -8,11 +8,13 @@
 [node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318848514]
+z_index = -10
 texture = ExtResource("2_kxljb")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
+
 [node name="Hunter" parent="." unique_id=1841461092 instance=ExtResource("2_y1kpu")]
+position = Vector2(-45, -3)
 
 [node name="Mosquito" parent="." unique_id=1938226174 instance=ExtResource("3_vaubn")]

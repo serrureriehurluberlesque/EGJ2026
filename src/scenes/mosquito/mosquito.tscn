@@ -3,15 +3,14 @@
 [ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
 [ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jw6bw"]
-radius = 3.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qef0k"]
+size = Vector2(1, 1)
 
 [node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
 script = ExtResource("1_1pda7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996934396]
-scale = Vector2(0.105045885, 0.105045885)
 texture = ExtResource("2_myiam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1457078639]
-shape = SubResource("CircleShape2D_jw6bw")
+shape = SubResource("RectangleShape2D_qef0k")

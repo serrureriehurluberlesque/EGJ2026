@@ -6,9 +6,6 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_3veov"]
 radius = 0.5
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uavd5"]
-radius = 1.0
-
 [node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
 z_index = 1
 collision_layer = 2
@@ -16,14 +13,7 @@ collision_mask = 2
 script = ExtResource("1_1pda7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996934396]
-self_modulate = Color(1, 1, 1, 0.7294118)
 texture = ExtResource("2_myiam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218592436]
 shape = SubResource("CircleShape2D_3veov")
-
-[node name="Attack" type="Area2D" parent="." unique_id=1594769443]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=131297274]
-shape = SubResource("CircleShape2D_uavd5")

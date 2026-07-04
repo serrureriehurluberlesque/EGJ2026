@@ -8,7 +8,7 @@ var previous_velocity := Vector2(0, 0)
 @export var direction: Vector2 = Vector2(1.0, 0.0)
 @onready var _animated_sprite = $AnimatedSprite2D
 
-var is_attacking = false
+@export var is_attacking = false
 
 var face_direction := "down"
 var animation_to_play := 'stand_down'
@@ -37,12 +37,11 @@ func _input(event):
 		
 func attack():
 	%Attack.rotation = direction.angle() + PI / 2
-	%Attack.position = ATTACK_DELTA * direction
-	%Attack.show()
-	is_attacking = true
-	await get_tree().create_timer(1).timeout
-	%Attack.hide()
-	is_attacking = false
+	var anim: Animation = $AnimationPlayer.get_animation("slap")
+	var track_id: int = anim.find_track("Attack/visible") # TODO fix
+	var key_id: int = anim.track_find_key(track_id, 0.6)
+	anim.track_set_key_value(track_id, key_id, ATTACK_DELTA * direction)
+	$animation_player.play("slap")
 	
 func move_animation(direction, velocity):
 	face_direction = main_direction_str(direction)

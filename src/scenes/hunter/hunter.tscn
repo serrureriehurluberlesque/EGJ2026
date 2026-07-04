@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c87vdxv5xdnh2" path="res://scenes/hunter/hunter.gd" id="1_8d4pn"]
 [ext_resource type="Texture2D" uid="uid://k27prqi1to45" path="res://icon.svg" id="2_gr2o8"]
 [ext_resource type="Texture2D" uid="uid://ce7gotx5xf8km" path="res://scenes/hunter/hand.png" id="3_2810g"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
 [ext_resource type="Texture2D" uid="uid://bbmcamxvwrkcb" path="res://scenes/hunter/assets/ch_standing_left.png" id="5_fggcs"]
 [ext_resource type="Texture2D" uid="uid://d2bukb81ha4i0" path="res://scenes/hunter/assets/ch_standing_right.png" id="6_5y8yd"]
@@ -15,9 +16,144 @@
 [ext_resource type="Texture2D" uid="uid://cghf06vpmdl5e" path="res://scenes/hunter/assets/ch_going_right_2.png" id="13_ocg18"]
 [ext_resource type="Texture2D" uid="uid://dxdmldrdnxu2s" path="res://scenes/hunter/assets/ch_going_up_1.png" id="14_xuy88"]
 [ext_resource type="Texture2D" uid="uid://bu72sxiei3fy8" path="res://scenes/hunter/assets/ch_going_up_2.png" id="15_jjx5t"]
+=======
+[ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_p7r7f"]
+>>>>>>> 45824bd (slap animation (broken))
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
 radius = 20.0
+
+[sub_resource type="Animation" id="Animation_2810g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Attack/..:is_attacking")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Impact:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p7r7f"]
+resource_name = "slap"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.59999996, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.3), Vector2(1, 0.5), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -25)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Attack/..:is_attacking")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Impact:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.55, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fev3k"]
+_data = {
+&"RESET": SubResource("Animation_2810g"),
+&"slap": SubResource("Animation_p7r7f")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw6bw"]
 radius = 21.0
@@ -127,6 +263,9 @@ animations = [{
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
+speed = null
+acceleration_factor = null
+direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146538190]
 shape = SubResource("CircleShape2D_2810g")
@@ -136,13 +275,21 @@ visible = false
 scale = Vector2(0.24921371, 0.24921371)
 texture = ExtResource("2_gr2o8")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2048876787]
+root_node = NodePath("../Attack")
+libraries/ = SubResource("AnimationLibrary_fev3k")
+
 [node name="Attack" type="Area2D" parent="." unique_id=2026126006]
 unique_name_in_owner = true
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1458373268]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_jw6bw")
+
+[node name="Impact" type="Sprite2D" parent="Attack" unique_id=1535840789]
+position = Vector2(0, -8)
+scale = Vector2(0.78787875, 0.7878788)
+texture = ExtResource("3_p7r7f")
 
 [node name="Hand" type="Sprite2D" parent="Attack" unique_id=1882557809]
 position = Vector2(-2.0000002, -3.0000005)

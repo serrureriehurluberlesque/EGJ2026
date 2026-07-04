@@ -38,10 +38,12 @@ color = Color(0.92941177, 0.8039216, 0.7764706, 1)
 
 [node name="Human" type="TextureRect" parent="HunterWins" unique_id=261752026]
 layout_mode = 0
-offset_left = -95.0
+offset_left = -94.0
 offset_top = -80.0
+offset_right = 1.0
 offset_bottom = 69.0
 texture = ExtResource("1_yquca")
+flip_h = true
 
 [node name="Label" type="Label" parent="HunterWins" unique_id=290520677]
 layout_mode = 0
@@ -77,10 +79,10 @@ color = Color(0.63529414, 0.8352941, 0.8352941, 1)
 
 [node name="Mosquito" type="TextureRect" parent="MosquitoWins" unique_id=1364457304]
 layout_mode = 0
-offset_left = 1.0
-offset_top = -76.0
-offset_right = 95.0
-offset_bottom = 52.0
+offset_left = 11.0
+offset_top = -62.0
+offset_right = 105.0
+offset_bottom = 66.0
 texture = ExtResource("2_vadf5")
 flip_h = true
 

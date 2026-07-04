@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bu72sxiei3fy8" path="res://scenes/hunter/assets/ch_going_up_2.png" id="15_jjx5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
-radius = 20.0
+radius = 11.0
 
 [sub_resource type="Animation" id="Animation_2810g"]
 length = 0.001
@@ -85,6 +85,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_p7r7f"]
 resource_name = "slap"
+length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,7 +93,7 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -104,7 +105,7 @@ tracks/1/path = NodePath(".:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.43333334, 0.59999996, 0.75),
+"times": PackedFloat32Array(0, 0.23333335, 0.39999998, 0.55),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 0.3), Vector2(1, 0.5), Vector2(1.1, 1.1), Vector2(1, 1)]
@@ -116,7 +117,7 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6),
+"times": PackedFloat32Array(0, 0.40000004),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -25)]
@@ -128,7 +129,7 @@ tracks/3/path = NodePath("../..:is_attacking")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -140,10 +141,10 @@ tracks/4/path = NodePath("Impact:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.55, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.40000004, 0.8),
+"transitions": PackedFloat32Array(20.39297, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/5/type = "method"
 tracks/5/imported = false
@@ -152,7 +153,7 @@ tracks/5/path = NodePath("../..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0.6),
+"times": PackedFloat32Array(0.40000004),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],

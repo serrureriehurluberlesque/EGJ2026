@@ -3,12 +3,127 @@
 [ext_resource type="Script" uid="uid://c87vdxv5xdnh2" path="res://scenes/hunter/hunter.gd" id="1_8d4pn"]
 [ext_resource type="Texture2D" uid="uid://k27prqi1to45" path="res://icon.svg" id="2_gr2o8"]
 [ext_resource type="Texture2D" uid="uid://ce7gotx5xf8km" path="res://scenes/hunter/hand.png" id="3_2810g"]
+[ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
+[ext_resource type="Texture2D" uid="uid://bbmcamxvwrkcb" path="res://scenes/hunter/assets/ch_standing_left.png" id="5_fggcs"]
+[ext_resource type="Texture2D" uid="uid://d2bukb81ha4i0" path="res://scenes/hunter/assets/ch_standing_right.png" id="6_5y8yd"]
+[ext_resource type="Texture2D" uid="uid://4u2vu3vc0eqh" path="res://scenes/hunter/assets/ch_standing_up.png" id="7_m8gdn"]
+[ext_resource type="Texture2D" uid="uid://duuperwmcwlr" path="res://scenes/hunter/assets/ch_going_down_1.png" id="8_imobt"]
+[ext_resource type="Texture2D" uid="uid://c3m6cyuwfn2e6" path="res://scenes/hunter/assets/ch_going_down_2.png" id="9_eyhhx"]
+[ext_resource type="Texture2D" uid="uid://dyrcdok32w6iu" path="res://scenes/hunter/assets/ch_going_left_1.png" id="10_v44sy"]
+[ext_resource type="Texture2D" uid="uid://c4f87gu645nau" path="res://scenes/hunter/assets/ch_going_left_2.png" id="11_pi752"]
+[ext_resource type="Texture2D" uid="uid://dpr022ki2griw" path="res://scenes/hunter/assets/ch_going_right_1.png" id="12_qwhmc"]
+[ext_resource type="Texture2D" uid="uid://cghf06vpmdl5e" path="res://scenes/hunter/assets/ch_going_right_2.png" id="13_ocg18"]
+[ext_resource type="Texture2D" uid="uid://dxdmldrdnxu2s" path="res://scenes/hunter/assets/ch_going_up_1.png" id="14_xuy88"]
+[ext_resource type="Texture2D" uid="uid://bu72sxiei3fy8" path="res://scenes/hunter/assets/ch_going_up_2.png" id="15_jjx5t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
 radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jw6bw"]
 radius = 21.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2gkgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sd5u0")
+}],
+"loop": 1,
+"name": &"stand_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fggcs")
+}],
+"loop": 1,
+"name": &"stand_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5y8yd")
+}],
+"loop": 1,
+"name": &"stand_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m8gdn")
+}],
+"loop": 1,
+"name": &"stand_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sd5u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_imobt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sd5u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eyhhx")
+}],
+"loop": 1,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_fggcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_v44sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fggcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pi752")
+}],
+"loop": 1,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5y8yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qwhmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5y8yd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ocg18")
+}],
+"loop": 1,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m8gdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_xuy88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m8gdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jjx5t")
+}],
+"loop": 1,
+"name": &"walk_up",
+"speed": 5.0
+}]
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
@@ -17,6 +132,7 @@ script = ExtResource("1_8d4pn")
 shape = SubResource("CircleShape2D_2810g")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991883815]
+visible = false
 scale = Vector2(0.24921371, 0.24921371)
 texture = ExtResource("2_gr2o8")
 
@@ -31,3 +147,7 @@ shape = SubResource("CircleShape2D_jw6bw")
 position = Vector2(-2.0000002, -3.0000005)
 scale = Vector2(0.12280703, 0.12280703)
 texture = ExtResource("3_2810g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
+sprite_frames = SubResource("SpriteFrames_2gkgx")
+animation = &"stand_left"

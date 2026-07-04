@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
 [ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qef0k"]
-size = Vector2(1, 1)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_myiam"]
+points = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
 
 [node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1pda7")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996934396]
 texture = ExtResource("2_myiam")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1457078639]
-shape = SubResource("RectangleShape2D_qef0k")
+shape = SubResource("ConvexPolygonShape2D_myiam")

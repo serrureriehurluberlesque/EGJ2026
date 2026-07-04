@@ -2,9 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c87vdxv5xdnh2" path="res://scenes/hunter/hunter.gd" id="1_8d4pn"]
 [ext_resource type="Texture2D" uid="uid://k27prqi1to45" path="res://icon.svg" id="2_gr2o8"]
+[ext_resource type="Texture2D" uid="uid://ce7gotx5xf8km" path="res://scenes/hunter/hand.png" id="3_2810g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
 radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jw6bw"]
+radius = 21.0
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
@@ -15,3 +19,15 @@ shape = SubResource("CircleShape2D_2810g")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991883815]
 scale = Vector2(0.24921371, 0.24921371)
 texture = ExtResource("2_gr2o8")
+
+[node name="Attack" type="Area2D" parent="." unique_id=2026126006]
+unique_name_in_owner = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack" unique_id=1458373268]
+shape = SubResource("CircleShape2D_jw6bw")
+
+[node name="Hand" type="Sprite2D" parent="Attack" unique_id=1882557809]
+position = Vector2(-2.0000002, -3.0000005)
+scale = Vector2(0.12280703, 0.12280703)
+texture = ExtResource("3_2810g")

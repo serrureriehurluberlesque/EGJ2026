@@ -47,11 +47,11 @@ flip_h = true
 
 [node name="Label" type="Label" parent="HunterWins" unique_id=290520677]
 layout_mode = 0
-offset_left = 21.0
-offset_top = -19.0
-offset_right = 81.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 24
+offset_left = 18.0
+offset_top = -20.0
+offset_right = 98.0
+offset_bottom = 27.0
+theme_override_font_sizes/font_size = 32
 text = "HUMAN
 WINS!"
 
@@ -88,11 +88,11 @@ flip_h = true
 
 [node name="Label" type="Label" parent="MosquitoWins" unique_id=1604212557]
 layout_mode = 0
-offset_left = -99.0
-offset_top = -19.0
-offset_right = -3.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 24
+offset_left = -105.0
+offset_top = -54.0
+offset_right = 23.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 32
 text = "MOSQUITO
 WINS!"
 

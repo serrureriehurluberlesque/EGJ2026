@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed = 200
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+	var input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
 	velocity = input_direction * speed
 
 func _physics_process(delta):

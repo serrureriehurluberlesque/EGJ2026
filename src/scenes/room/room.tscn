@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://byyxa30868wrw"]
 
 [ext_resource type="Script" uid="uid://cy2kygsnty484" path="res://scenes/room/room.gd" id="1_8xru0"]
-[ext_resource type="Texture2D" uid="uid://bua4itwwxrh1j" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
+[ext_resource type="Texture2D" uid="uid://u0n7ux2ewc60" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vaubn"]
+friction = 0.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3veov"]
+normal = Vector2(1, 0)
+distance = -90.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vaubn"]
+normal = Vector2(-1, 0)
+distance = -90.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1w8vm"]
+normal = Vector2(0, 1)
+distance = -68.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w7vtx"]
+distance = -68.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gui0a"]
+normal = Vector2(1, 0)
+distance = -119.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7jj40"]
+normal = Vector2(-1, 0)
+distance = -119.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dv301"]
+normal = Vector2(0, 1)
+distance = -89.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_68b7a"]
+distance = -89.0
 
 [node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
@@ -18,3 +51,59 @@ texture = ExtResource("2_kxljb")
 position = Vector2(-45, -3)
 
 [node name="Mosquito" parent="." unique_id=1938226174 instance=ExtResource("3_vaubn")]
+
+[node name="WallLeft" type="StaticBody2D" parent="." unique_id=1909614442]
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft" unique_id=1881324430]
+shape = SubResource("WorldBoundaryShape2D_3veov")
+
+[node name="WallRight" type="StaticBody2D" parent="." unique_id=461843722]
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight" unique_id=1129038065]
+shape = SubResource("WorldBoundaryShape2D_vaubn")
+
+[node name="WallTop" type="StaticBody2D" parent="." unique_id=1828456268]
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop" unique_id=393326630]
+shape = SubResource("WorldBoundaryShape2D_1w8vm")
+
+[node name="WallDown" type="StaticBody2D" parent="." unique_id=63700979]
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDown" unique_id=1181888491]
+shape = SubResource("WorldBoundaryShape2D_w7vtx")
+
+[node name="WallLeft2" type="StaticBody2D" parent="." unique_id=1128961269]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft2" unique_id=2139397355]
+shape = SubResource("WorldBoundaryShape2D_gui0a")
+
+[node name="WallRight2" type="StaticBody2D" parent="." unique_id=2058268932]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight2" unique_id=1039048191]
+shape = SubResource("WorldBoundaryShape2D_7jj40")
+
+[node name="WallTop2" type="StaticBody2D" parent="." unique_id=187221527]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop2" unique_id=484936951]
+shape = SubResource("WorldBoundaryShape2D_dv301")
+
+[node name="WallDown2" type="StaticBody2D" parent="." unique_id=1061827944]
+collision_layer = 2
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_vaubn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDown2" unique_id=1917573707]
+shape = SubResource("WorldBoundaryShape2D_68b7a")

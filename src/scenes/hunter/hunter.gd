@@ -42,21 +42,27 @@ func _input(event):
 		
 func attack():
 	$Attack.rotation = direction.angle() + PI / 2
+	$AnimationPlayer.play("slap" if velocity.length() > 0.3 else "selfslap")
 	#var anim: Animation = $AnimationPlayer.get_animation("slap")
 	#var track_index = anim.add_track(Animation.TYPE_VALUE)
 	#anim.track_set_path(track_index, "Area:position")
 	#anim.track_insert_key(track_index, 0.0, Vector2())
 	#var key_id: int = anim.track_find_key(track_index, 0.6)
 	#anim.track_insert_key(track_index, key_id, ATTACK_DELTA)
-	$AnimationPlayer.play("slap")
 
-func hit():
+func selfhit():
 	for body in $Attack/Area.get_overlapping_bodies():
 		print(body)
 		if "slap" in body:
 			body.slap()
 		if "self_slap" in body:
 			body.self_slap()
+
+func hit():
+	for body in $Attack/Area.get_overlapping_bodies():
+		print(body)
+		if "slap" in body:
+			body.slap()
 
 func move_animation(direction, velocity):
 	face_direction = main_direction_str(direction)
@@ -74,3 +80,6 @@ func main_direction_str(direction) -> String:
 func biten():
 	print("bitten")
 	bit.emit()
+
+func self_slap():
+	print("self-slapped")

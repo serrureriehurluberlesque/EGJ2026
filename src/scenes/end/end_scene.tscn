@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cs57y1owj0od0"]
+
+[ext_resource type="Script" uid="uid://c221jc438l2ig" path="res://scenes/end/end_scene.gd" id="1_vadf5"]
+[ext_resource type="Texture2D" uid="uid://drd8c6uxonf4u" path="res://scenes/room/assets/character_large.png" id="1_yquca"]
+[ext_resource type="Texture2D" uid="uid://bqbf2loss2l5w" path="res://scenes/room/assets/mosquito_large.png" id="2_vadf5"]
+
+[node name="EndScene" type="Control" unique_id=2034295990]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vadf5")
+
+[node name="HunterWins" type="Control" parent="." unique_id=1270667163]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="HunterWins" unique_id=1376661515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92941177, 0.8039216, 0.7764706, 1)
+
+[node name="Human" type="TextureRect" parent="HunterWins" unique_id=261752026]
+layout_mode = 0
+offset_left = -95.0
+offset_top = -80.0
+offset_bottom = 69.0
+texture = ExtResource("1_yquca")
+
+[node name="Label" type="Label" parent="HunterWins" unique_id=290520677]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -19.0
+offset_right = 81.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 24
+text = "HUMAN
+WINS!"
+
+[node name="MosquitoWins" type="Control" parent="." unique_id=670826881]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="MosquitoWins" unique_id=1167460615]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -110.0
+offset_right = 100.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.63529414, 0.8352941, 0.8352941, 1)
+
+[node name="Mosquito" type="TextureRect" parent="MosquitoWins" unique_id=1364457304]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -76.0
+offset_right = 95.0
+offset_bottom = 52.0
+texture = ExtResource("2_vadf5")
+flip_h = true
+
+[node name="Label" type="Label" parent="MosquitoWins" unique_id=1604212557]
+layout_mode = 0
+offset_left = -99.0
+offset_top = -19.0
+offset_right = -3.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 24
+text = "MOSQUITO
+WINS!"
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1141390926]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 70.0
+offset_right = 96.0
+offset_bottom = 93.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0]- SPACE to get revenge -[/pulse]"

@@ -26,5 +26,5 @@ func start_fight() -> void:
 	slapped = 0
 
 func end_fight() -> void:
-	var winner_name = "Mosquito" if bit > slapped else "Hunter"
-	print("%s win !" % [winner_name])
+	Globals.winner_name = "Mosquito" if bit > slapped else "Hunter"
+	get_tree().change_scene_to_file("res://scenes/end/end_scene.tscn")

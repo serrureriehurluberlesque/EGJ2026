@@ -6,11 +6,11 @@ var bit : int
 var slapped : int
 var t : float
 
-var started: bool = false
 var m_ready: bool = false
 var h_ready: bool = false
 
 func _ready() -> void:
+	Globals.started = false
 	$AnimationPlayer.play("fight_appears")
 
 func _input(event):
@@ -30,7 +30,7 @@ func slap() -> void:
 	slapped += 1
 
 func _process(delta: float) -> void:
-	if started:
+	if Globals.started:
 		t += delta
 		if bit + slapped > 0 or t > MAX_TIME:
 			end_fight()
@@ -42,7 +42,7 @@ func start_fight() -> void:
 	$Mosquito.connect("slapped", slap)
 	bit = 0
 	slapped = 0
-	started = true
+	Globals.started = true
 
 func end_fight() -> void:
 	print(bit, slapped)

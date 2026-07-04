@@ -32,7 +32,7 @@ func _process(delta):
 		move_animation(direction, velocity)
 
 func _physics_process(delta):
-	if not is_attacking:
+	if Globals.started and not is_attacking:
 		get_input()
 		move_and_slide()
 	for body in $Area2D.get_overlapping_bodies():

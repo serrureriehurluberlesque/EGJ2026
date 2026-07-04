@@ -24,8 +24,9 @@ func get_input():
 	near_human = false
 
 func _physics_process(delta):
-	get_input()
-	move_and_slide()
+	if Globals.started:
+		get_input()
+		move_and_slide()
 
 func _input(event):
 	if Input.is_action_pressed("ms_attack"):

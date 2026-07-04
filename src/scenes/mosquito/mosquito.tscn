@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
 [ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3veov"]
+radius = 0.5
+
 [node name="Mosquito" type="CharacterBody2D" unique_id=1938226174]
 z_index = 1
 collision_layer = 2
@@ -12,5 +15,5 @@ script = ExtResource("1_1pda7")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=996934396]
 texture = ExtResource("2_myiam")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=311144193]
-polygon = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218592436]
+shape = SubResource("CircleShape2D_3veov")

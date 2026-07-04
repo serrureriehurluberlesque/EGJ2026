@@ -17,7 +17,7 @@ func get_input():
 	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
 	
 	if near_human:
-		velocity = (human_velocity + velocity) / (1 + acceleration_factor)
+		velocity = (human_velocity + 5 * velocity) / (1 + 5 * acceleration_factor)
 		
 	previous_velocity = velocity
 	human_velocity = Vector2(0, 0)
@@ -34,7 +34,7 @@ func _input(event):
 func attack():
 	$Attack.show()
 	is_attacking = true
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.9).timeout
 	bit()
 	$Attack/Impact.show()
 	await get_tree().create_timer(0.1).timeout

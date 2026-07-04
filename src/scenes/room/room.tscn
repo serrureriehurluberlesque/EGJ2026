@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
 [ext_resource type="Texture2D" uid="uid://18y3lcnb82lu" path="res://scenes/room/assets/split-screen-human.png" id="5_7jj40"]
+[ext_resource type="FontFile" uid="uid://domukga160pa0" path="res://fonts/expanded/zxSpectrumExpanded.woff" id="5_68b7a"]
 [ext_resource type="Texture2D" uid="uid://drd8c6uxonf4u" path="res://scenes/room/assets/character_large.png" id="5_w7vtx"]
 [ext_resource type="Texture2D" uid="uid://bqbf2loss2l5w" path="res://scenes/room/assets/mosquito_large.png" id="6_gui0a"]
 [ext_resource type="FontFile" uid="uid://ccy51dkjijaio" path="res://fonts/strictInverted/zxSpectrumStrictInverted.woff" id="7_68b7a"]
@@ -48,6 +49,170 @@ bg_color = Color(1, 1, 1, 0.8784314)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5g04"]
 bg_color = Color(1, 1, 1, 0.8784314)
+
+[sub_resource type="Animation" id="Animation_dv301"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls/Hunter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Controls/Mosquito:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controls/Go:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Controls/VS:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_68b7a"]
+resource_name = "fight_appears"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls/Hunter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-150, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Controls/Mosquito:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controls/VS:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ip1yl"]
+resource_name = "go"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls/Go:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.35, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start_fight"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Controls/Hunter:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-150, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Controls/Mosquito:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(150, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Controls/VS:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ip1yl"]
+_data = {
+&"RESET": SubResource("Animation_dv301"),
+&"fight_appears": SubResource("Animation_68b7a"),
+&"go": SubResource("Animation_ip1yl")
+}
 
 [node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
@@ -121,7 +286,6 @@ physics_material_override = SubResource("PhysicsMaterial_vaubn")
 shape = SubResource("WorldBoundaryShape2D_68b7a")
 
 [node name="Controls" type="Control" parent="." unique_id=847588465]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -131,13 +295,32 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="HunterWins" type="Control" parent="Controls" unique_id=1067281895]
+[node name="Go" type="RichTextLabel" parent="Controls" unique_id=1368027557]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -45.0
+offset_right = 30.0
+offset_bottom = -18.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_68b7a")
+theme_override_fonts/bold_font = ExtResource("7_68b7a")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "GO!"
+
+[node name="Hunter" type="Control" parent="Controls" unique_id=1067281895]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_right = 40.0
+offset_left = -150.0
+offset_right = -110.0
 offset_bottom = 40.0
 
-[node name="BG" type="TextureRect" parent="Controls/HunterWins" unique_id=1525235065]
+[node name="BG" type="TextureRect" parent="Controls/Hunter" unique_id=1525235065]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -152,7 +335,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_7jj40")
 
-[node name="Human" type="TextureRect" parent="Controls/HunterWins" unique_id=712493525]
+[node name="Human" type="TextureRect" parent="Controls/Hunter" unique_id=712493525]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -4.925
@@ -167,17 +350,19 @@ texture = ExtResource("5_w7vtx")
 flip_h = true
 metadata/_edit_use_anchors_ = true
 
-[node name="Controls" type="Label" parent="Controls/HunterWins" unique_id=80232947]
+[node name="HControls" type="RichTextLabel" parent="Controls/Hunter" unique_id=1325283249]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = -117.0
 offset_top = 52.0
 offset_right = -5.0
 offset_bottom = 87.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_68b7a")
+bbcode_enabled = true
 text = "- CONTROLS-"
 
-[node name="WASD" type="RichTextLabel" parent="Controls/HunterWins/Controls" unique_id=1915743447]
+[node name="WASD" type="RichTextLabel" parent="Controls/Hunter/HControls" unique_id=1915743447]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -191,7 +376,7 @@ theme_override_fonts/bold_font = ExtResource("7_68b7a")
 bbcode_enabled = true
 text = "[b]W[/b],[b]A[/b],[b]S[/b],[b]D[/b] - Move"
 
-[node name="E" type="RichTextLabel" parent="Controls/HunterWins/Controls" unique_id=1867153748]
+[node name="E" type="RichTextLabel" parent="Controls/Hunter/HControls" unique_id=1867153748]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -205,13 +390,14 @@ theme_override_fonts/bold_font = ExtResource("7_68b7a")
 bbcode_enabled = true
 text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0][b]E[/b] - Attack[/pulse]"
 
-[node name="MosquitoWins" type="Control" parent="Controls" unique_id=1017674830]
+[node name="Mosquito" type="Control" parent="Controls" unique_id=1017674830]
 unique_name_in_owner = true
 anchors_preset = 0
-offset_right = 40.0
+offset_left = 150.0
+offset_right = 189.9999
 offset_bottom = 40.0
 
-[node name="BG" type="TextureRect" parent="Controls/MosquitoWins" unique_id=220941839]
+[node name="BG" type="TextureRect" parent="Controls/Mosquito" unique_id=220941839]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -226,7 +412,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_dv301")
 
-[node name="Mosquito" type="TextureRect" parent="Controls/MosquitoWins" unique_id=611311913]
+[node name="Mosquito" type="TextureRect" parent="Controls/Mosquito" unique_id=611311913]
 layout_mode = 0
 offset_left = 19.0
 offset_top = -48.0
@@ -235,17 +421,19 @@ offset_bottom = 80.0
 texture = ExtResource("6_gui0a")
 flip_h = true
 
-[node name="Controls" type="Label" parent="Controls/MosquitoWins" unique_id=1743875526]
+[node name="MControls" type="RichTextLabel" parent="Controls/Mosquito" unique_id=1903628872]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 7.0
 offset_top = -86.0
 offset_right = 119.0
 offset_bottom = -51.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_v5g04")
+bbcode_enabled = true
 text = "- CONTROLS -"
 
-[node name="WASD" type="RichTextLabel" parent="Controls/MosquitoWins/Controls" unique_id=1022265406]
+[node name="WASD" type="RichTextLabel" parent="Controls/Mosquito/MControls" unique_id=1022265406]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -259,7 +447,7 @@ theme_override_fonts/bold_font = ExtResource("7_68b7a")
 bbcode_enabled = true
 text = "Arrows - Move"
 
-[node name="E" type="RichTextLabel" parent="Controls/MosquitoWins/Controls" unique_id=709708777]
+[node name="E" type="RichTextLabel" parent="Controls/Mosquito/MControls" unique_id=709708777]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -272,3 +460,21 @@ theme_override_colors/default_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_fonts/bold_font = ExtResource("7_68b7a")
 bbcode_enabled = true
 text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0][b]SHIFT[/b] - Attack[/pulse]"
+
+[node name="VS" type="Label" parent="Controls" unique_id=961449549]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 11.0
+offset_bottom = 4.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "VS"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1798792930]
+libraries/ = SubResource("AnimationLibrary_ip1yl")

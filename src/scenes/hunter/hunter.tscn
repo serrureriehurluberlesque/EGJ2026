@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c87vdxv5xdnh2" path="res://scenes/hunter/hunter.gd" id="1_8d4pn"]
 [ext_resource type="Texture2D" uid="uid://k27prqi1to45" path="res://icon.svg" id="2_gr2o8"]
 [ext_resource type="Texture2D" uid="uid://ce7gotx5xf8km" path="res://scenes/hunter/hand.png" id="3_2810g"]
-<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_p7r7f"]
 [ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
 [ext_resource type="Texture2D" uid="uid://bbmcamxvwrkcb" path="res://scenes/hunter/assets/ch_standing_left.png" id="5_fggcs"]
 [ext_resource type="Texture2D" uid="uid://d2bukb81ha4i0" path="res://scenes/hunter/assets/ch_standing_right.png" id="6_5y8yd"]
@@ -16,9 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cghf06vpmdl5e" path="res://scenes/hunter/assets/ch_going_right_2.png" id="13_ocg18"]
 [ext_resource type="Texture2D" uid="uid://dxdmldrdnxu2s" path="res://scenes/hunter/assets/ch_going_up_1.png" id="14_xuy88"]
 [ext_resource type="Texture2D" uid="uid://bu72sxiei3fy8" path="res://scenes/hunter/assets/ch_going_up_2.png" id="15_jjx5t"]
-=======
-[ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_p7r7f"]
->>>>>>> 45824bd (slap animation (broken))
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
 radius = 20.0
@@ -263,9 +260,6 @@ animations = [{
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
-speed = null
-acceleration_factor = null
-direction = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146538190]
 shape = SubResource("CircleShape2D_2810g")

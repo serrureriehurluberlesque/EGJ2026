@@ -13,6 +13,8 @@ var previous_velocity := Vector2(0, 0)
 var face_direction := "down"
 var animation_to_play := 'stand_down'
 
+signal bit
+
 func get_input():
 	var input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
 	if not input_direction:
@@ -39,11 +41,13 @@ func _input(event):
 		attack()
 		
 func attack():
-	%Attack.rotation = direction.angle() + PI / 2
+	$Attack.rotation = direction.angle() + PI / 2
 	var anim: Animation = $AnimationPlayer.get_animation("slap")
-	var track_id: int = anim.find_track("Attack/visible", 0) # TODO fix
-	var key_id: int = anim.track_find_key(track_id, 0.6)
-	anim.track_set_key_value(track_id, key_id, ATTACK_DELTA * direction)
+	var track_index = anim.add_track(Animation.TYPE_VALUE)
+	anim.track_set_path(track_index, "Attack:position")
+	anim.track_insert_key(track_index, 0.0, Vector2())
+	var key_id: int = anim.track_find_key(track_index, 0.6)
+	anim.track_insert_key(track_index, key_id, ATTACK_DELTA)
 	$AnimationPlayer.play("slap")
 	
 func move_animation(direction, velocity):

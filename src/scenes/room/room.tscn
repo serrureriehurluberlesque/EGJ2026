@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://byyxa30868wrw"]
 
 [ext_resource type="Script" uid="uid://cy2kygsnty484" path="res://scenes/room/room.gd" id="1_8xru0"]
+[ext_resource type="Texture2D" uid="uid://bua4itwwxrh1j" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
 
-[node name="Room" type="Node" unique_id=1623542791]
+[node name="Room" type="Node2D" unique_id=1541185175]
 script = ExtResource("1_8xru0")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318848514]
+texture = ExtResource("2_kxljb")

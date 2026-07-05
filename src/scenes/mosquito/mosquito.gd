@@ -35,10 +35,9 @@ func get_move_input():
 	var rel_vel = velocity
 	if near_human:
 		rel_vel -= human_velocity
-	
+
 	previous_velocity = velocity
-	
-	
+
 	if input_direction.length() > 0.1 or (not near_human and velocity.length() > 2.5):
 		if not $AudioStreamPlayer2D.is_playing():
 			$AudioStreamPlayer2D.play(randf() * 10.0)

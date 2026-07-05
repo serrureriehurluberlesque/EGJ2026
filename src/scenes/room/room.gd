@@ -14,16 +14,17 @@ func _ready() -> void:
 	$AnimationPlayer.play("fight_appears")
 
 func _input(event):
-	if Input.is_action_pressed("hunter_attack"):
-		%HControls.text = "[center][color=red]READY[/color][/center]"
-		$ReadyPlayer.play()
-		await get_tree().create_timer(0.2).timeout
-		h_ready = true
-	elif Input.is_action_pressed("ms_attack"):
-		%MControls.text = "[center][color=red]READY[/color][/center]"
-		$ReadyPlayer.play()
-		await get_tree().create_timer(0.2).timeout
-		m_ready = true
+	if not Globals.started:
+		if Input.is_action_pressed("hunter_attack"):
+			%HControls.text = "[center][color=red]READY[/color][/center]"
+			$ReadyPlayer.play()
+			await get_tree().create_timer(0.2).timeout
+			h_ready = true
+		elif Input.is_action_pressed("ms_attack"):
+			%MControls.text = "[center][color=red]READY[/color][/center]"
+			$ReadyPlayer.play()
+			await get_tree().create_timer(0.2).timeout
+			m_ready = true
 
 func bite() -> void:
 	bit += 1

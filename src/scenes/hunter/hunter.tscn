@@ -462,7 +462,8 @@ stream = ExtResource("5_pi752")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
 sprite_frames = SubResource("SpriteFrames_2gkgx")
-animation = &"getup"
+animation = &"sleep"
+frame_progress = 0.70410573
 
 [node name="Area2D" type="Area2D" parent="." unique_id=128954093]
 collision_layer = 2

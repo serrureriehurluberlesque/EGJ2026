@@ -19,6 +19,8 @@ signal bit
 
 
 func _process(delta):
+	if not Globals.started:
+		return
 	if is_attacking:
 		move_animation(direction, Vector2())
 	else:
@@ -98,3 +100,9 @@ func biten():
 
 func self_slap():
 	print("self-slapped")
+
+func sleep():
+	_animated_sprite.play("sleep")
+	
+func get_up():
+	_animated_sprite.play("getup")

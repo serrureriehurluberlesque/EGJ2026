@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bkt1akhru3p0v" path="res://scenes/mainmenu/sunset.gdshader" id="1_oktx4"]
 [ext_resource type="Texture2D" uid="uid://b6o7r3chfj4ih" path="res://scenes/mainmenu/assets/palette_sunset.png" id="2_fi8nj"]
 [ext_resource type="Texture2D" uid="uid://d14okkijvrd28" path="res://scenes/mainmenu/assets/landscapeUV.png" id="3_ckupo"]
+[ext_resource type="AudioStream" uid="uid://egsfvl0qpqqc" path="res://scenes/mainmenu/assets/quena_loop.mp3" id="5_xyqql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2gkgx"]
 shader = ExtResource("1_oktx4")
@@ -120,3 +121,7 @@ offset_bottom = 93.0
 grow_horizontal = 2
 bbcode_enabled = true
 text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0]- SPACE to start -[/pulse]"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1160991323]
+stream = ExtResource("5_xyqql")
+autoplay = true

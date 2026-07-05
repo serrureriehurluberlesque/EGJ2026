@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bqbf2loss2l5w" path="res://scenes/room/assets/mosquito_large.png" id="6_gui0a"]
 [ext_resource type="FontFile" uid="uid://ccy51dkjijaio" path="res://fonts/strictInverted/zxSpectrumStrictInverted.woff" id="7_68b7a"]
 [ext_resource type="Texture2D" uid="uid://ehgs8edn4tkh" path="res://scenes/room/assets/split-screen-mosquito.png" id="7_dv301"]
+[ext_resource type="AudioStream" uid="uid://jiwtvqnovyve" path="res://scenes/room/assets/game_start.wav" id="11_ip1yl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vaubn"]
 friction = 0.0
@@ -253,6 +254,20 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("StartSound")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.35),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ip1yl"]
@@ -528,3 +543,6 @@ text = "VS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1798792930]
 libraries/ = SubResource("AnimationLibrary_ip1yl")
+
+[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=282638211]
+stream = ExtResource("11_ip1yl")

@@ -431,3 +431,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1696207126]
 polygon = PackedVector2Array(-6, -1, -4, -10, 0.5, -11, 5, -10, 7, -1, 5, 0, 7, 2, 7, 5, 6, 5, 5, 10, 3, 10, 0.5, 10, -2, 10, -4, 10, -4, 5, -6, 5, -6, 1, -4, 0)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=890254490]
+current = true

@@ -26,6 +26,14 @@ func get_input():
 func _physics_process(delta):
 	if Globals.started:
 		get_input()
+		if velocity.length() > 0.5:
+			print("start")
+			if not $AudioStreamPlayer2D.is_playing():
+				$AudioStreamPlayer2D.play(randf() * 10.0)
+		else:
+			print("stop")
+			$AudioStreamPlayer2D.stop()
+			
 		move_and_slide()
 
 func _input(event):

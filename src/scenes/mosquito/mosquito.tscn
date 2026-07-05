@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cvba2gw78r04l" path="res://scenes/mosquito/mosquito.gd" id="1_1pda7"]
 [ext_resource type="Texture2D" uid="uid://dl8p3jrlguxnm" path="res://scenes/mosquito/mosquito.png" id="2_myiam"]
 [ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_7j1pm"]
+[ext_resource type="AudioStream" uid="uid://ctmld144jgufx" path="res://scenes/mosquito/assets/moustique.wav" id="4_umyxe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3veov"]
 radius = 0.5
@@ -34,3 +35,10 @@ shape = SubResource("CircleShape2D_uavd5")
 visible = false
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_7j1pm")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=387849827]
+stream = ExtResource("4_umyxe")
+volume_db = 10.0
+max_distance = 300.0
+attenuation = 8.0
+panning_strength = 6.0

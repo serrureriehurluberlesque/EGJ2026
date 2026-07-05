@@ -9,6 +9,7 @@ var previous_velocity := Vector2(0, 0)
 @onready var _animated_sprite = $AnimatedSprite2D
 
 @export var is_attacking = false
+@export var is_sleeping = false
 
 var face_direction := "down"
 var animation_to_play := 'stand_down'
@@ -19,7 +20,7 @@ signal bit
 
 
 func _process(delta):
-	if not Globals.started:
+	if is_sleeping:
 		return
 	if is_attacking:
 		move_animation(direction, Vector2())
@@ -35,9 +36,8 @@ func _process(delta):
 	
 
 func _physics_process(delta):
-	if not Globals.started or is_attacking:
+	if is_attacking:
 		return
-
 	get_move_input()
 	move_and_slide()
 	for body in $Area2D.get_overlapping_bodies():
@@ -51,6 +51,8 @@ func _input(event):
 		attack()
 
 func get_move_input():
+	if not Globals.started:
+		return
 	var input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
 	if not input_direction:
 		input_direction = Vector2()
@@ -59,6 +61,11 @@ func get_move_input():
 	previous_velocity = velocity
 	
 	direction = velocity.limit_length()
+
+func move_to(pos: Vector2):
+	direction = self.position.direction_to(pos)
+	print(direction)
+	move_and_slide()
 
 func attack():
 	$Attack.rotation = direction.angle() + PI / 2
@@ -102,6 +109,7 @@ func self_slap():
 	print("self-slapped")
 
 func sleep():
+	is_sleeping = true
 	_animated_sprite.play("sleep")
 	
 func get_up():

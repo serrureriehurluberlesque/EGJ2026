@@ -12,6 +12,8 @@ var previous_velocity := Vector2(0, 0)
 
 var face_direction := "down"
 var animation_to_play := 'stand_down'
+var light_fluctuation_intensity = 0
+var light_fluctuation_color = 0
 
 signal bit
 
@@ -21,6 +23,14 @@ func _process(delta):
 		move_animation(direction, Vector2())
 	else:
 		move_animation(direction, velocity)
+	
+	light_fluctuation_intensity += (randf() - 0.5) * 10 * delta
+	light_fluctuation_color += (randf() - 0.5) * 10 * delta
+	light_fluctuation_intensity = max(-1.0, min( 1.0, light_fluctuation_intensity))
+	light_fluctuation_color = max(-1.0, min( 1.0, light_fluctuation_color))
+	$PointLight2D.energy = 1.0 + 0.8 * light_fluctuation_intensity
+	$PointLight2D.color = Color(1.0, 0.9 + 0.1 * light_fluctuation_color, 0.5 + 0.25 *  0.1 * light_fluctuation_color)
+	
 
 func _physics_process(delta):
 	if not Globals.started or is_attacking:

@@ -387,9 +387,12 @@ animations = [{
 }]
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
+z_index = 1
 script = ExtResource("1_8d4pn")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1748253959]
+modulate = Color(1, 1, 1, 0.5019608)
+color = Color(1, 0.8627451, 0.57254905, 1)
 range_z_max = 10
 texture = ExtResource("2_pi752")
 
@@ -428,7 +431,7 @@ texture = ExtResource("3_2810g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
 sprite_frames = SubResource("SpriteFrames_2gkgx")
-animation = &"stand_right"
+animation = &"getup"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=128954093]
 collision_layer = 2

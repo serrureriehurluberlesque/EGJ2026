@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce7gotx5xf8km"
-path="res://.godot/imported/hand.png-845633be5023bebd4a7437ffb5703539.ctex"
+uid="uid://daivvdu3vg20n"
+path="res://.godot/imported/hand2.png-6b72ea0f19a231506cf4dd494a6f07b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/hunter/hand.png"
-dest_files=["res://.godot/imported/hand.png-845633be5023bebd4a7437ffb5703539.ctex"]
+source_file="res://scenes/hunter/assets/hand2.png"
+dest_files=["res://.godot/imported/hand2.png-6b72ea0f19a231506cf4dd494a6f07b0.ctex"]
 
 [params]
 

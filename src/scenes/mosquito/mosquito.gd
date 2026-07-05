@@ -47,7 +47,9 @@ func attack():
 	if not is_attacking:
 		$Attack.show()
 		is_attacking = true
+		$StartBite.play()
 		await get_tree().create_timer(0.9).timeout
+		$Bite.play()
 		bit()
 		$Attack/Impact.show()
 		await get_tree().create_timer(0.1).timeout

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bpiw8ympenvix"]
 
+[ext_resource type="Script" uid="uid://crwk1ydqdgup6" path="res://scenes/mainmenu/mainmenu.gd" id="1_fi8nj"]
 [ext_resource type="Shader" uid="uid://bkt1akhru3p0v" path="res://scenes/mainmenu/sunset.gdshader" id="1_oktx4"]
 [ext_resource type="Texture2D" uid="uid://b6o7r3chfj4ih" path="res://scenes/mainmenu/assets/palette_sunset.png" id="2_fi8nj"]
 [ext_resource type="Texture2D" uid="uid://d14okkijvrd28" path="res://scenes/mainmenu/assets/landscapeUV.png" id="3_ckupo"]
@@ -24,10 +25,22 @@ tracks/0/keys = {
 "update": 0,
 "values": [-2.19]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Labels:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fi8nj"]
 resource_name = "sunset"
-length = 10.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -35,10 +48,22 @@ tracks/0/path = NodePath(".:material:shader_parameter/palette_row_index")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.8, 6.5666666, 9.933333),
+"times": PackedFloat32Array(0, 2.0333333, 3.9666667, 6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0.0, 1.0, 2.0, 3.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Labels:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xyqql"]
@@ -49,15 +74,49 @@ _data = {
 
 [node name="Mainmenu" type="Control" unique_id=428745047]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fi8nj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741203953]
 material = SubResource("ShaderMaterial_2gkgx")
 texture = ExtResource("3_ckupo")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=408917057]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=408917057]
+root_node = NodePath("../Sprite2D")
 libraries/ = SubResource("AnimationLibrary_xyqql")
+
+[node name="Labels" type="Control" parent="." unique_id=1405737846]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Labels" unique_id=570917503]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -46.0
+offset_right = 107.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0.89748, 0.70432156, 0.48537415, 1)
+theme_override_font_sizes/font_size = 24
+text = "Mash'tout 
+pique'tout"
+
+[node name="StartLabel" type="RichTextLabel" parent="Labels" unique_id=1196051337]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -91.0
+offset_top = 70.0
+offset_right = 61.0
+offset_bottom = 93.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0]- SPACE to start -[/pulse]"

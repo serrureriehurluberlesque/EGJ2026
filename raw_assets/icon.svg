@@ -2,39 +2,68 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="61.292717mm"
-   height="61.292721mm"
-   viewBox="0 0 61.292717 61.292721"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
    version="1.1"
    id="svg1"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   sodipodi:docname="icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:export-bgcolor="#ffffff00"
+     inkscape:zoom="1.181271"
+     inkscape:cx="156.18769"
+     inkscape:cy="253.54046"
+     inkscape:window-width="1536"
+     inkscape:window-height="891"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
   <defs
      id="defs1" />
   <g
-     id="layer1"
-     transform="translate(-25.657418,-14.887638)">
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
     <rect
-       style="fill:#781515;fill-opacity:1;stroke-width:0.264999"
+       style="fill:#781515;stroke-width:0.264999;fill-opacity:1"
        id="rect1"
        width="61.292717"
        height="61.292721"
        x="25.657417"
-       y="14.887637" />
+       y="14.887637"
+       inkscape:export-filename="icon_mp.svg"
+       inkscape:export-xdpi="30"
+       inkscape:export-ydpi="30" />
     <path
-       style="fill:#2e7cf7;fill-opacity:1;stroke-width:0.264999"
+       style="fill:#2e7cf7;stroke-width:0.264999;fill-opacity:1"
        d="m 56.382966,26.132554 1.267032,30.883928 6.968683,-28.033104 h 6.8103 l -0.316756,-4.909752 3.325961,0.316759 -2.05893,7.443818 -4.909751,0.791895 -1.74217,15.046018 -4.909754,15.362774 7.760576,-12.670329 2.692445,-12.828709 -0.316757,17.263324 -7.918955,11.244916 12.195191,-10.6114 0.950275,-18.530356 0.316759,24.390384 -5.068134,7.602196 3.64272,4.117859 9.344369,-3.801099 V 17.896841 H 56.541346 Z"
        id="path1" />
     <path
-       style="fill:#ff9300;fill-opacity:1;stroke-width:0.264999"
+       style="fill:#ff9300;stroke-width:0.264999;fill-opacity:1"
        d="m 31.042308,43.554258 13.164957,-3.527542 9.719273,2.604273 1.98129,10.267638 -3.801099,1.425411 3.009204,5.06813 -1.425411,1.742173 -0.475139,4.592992 -12.35357,1.583793 9.185989,0.950275 5.860026,0.158377 2.375689,-0.158377 4.909751,-7.760578 1.583793,0.316759 -3.009204,6.493544 6.493544,-4.592994 3.167581,1.425411 0.791895,2.058929 -4.909751,5.068131 -8.394094,2.058929 H 29.616894 v -28.66662 z"
-       id="path2" />
+       id="path2"
+       sodipodi:nodetypes="ccccccccccccccccccccccc" />
     <path
-       style="fill:#fffa00;fill-opacity:1;stroke-width:0.264999"
+       style="fill:#fffa00;stroke-width:0.264999;fill-opacity:1"
        d="m 29.775274,19.005494 v 20.272528 l 5.647079,-1.51313 -3.271391,-1.337694 V 20.272527 c 0,0 3.009202,3.959478 4.434615,8.077336 1.425411,4.117856 1.583791,9.185989 1.583791,9.185989 l 1.108654,-0.475138 c 0,0 0.158377,-4.751375 2.217307,-8.710851 2.058929,-3.959479 5.384889,-7.602198 5.384889,-7.602198 v 16.788187 l -3.32596,0.633516 4.909754,1.108654 1.108651,-1.425413 0.31676,-11.086539 3.009204,3.325963 7.285439,-6.335165 -6.176788,-6.018407 -11.244915,0.316759 2.850824,1.108653 c 0,0 -5.38489,5.226511 -6.018408,8.552472 -0.633516,3.325963 -0.950275,6.968683 -0.950275,6.968683 0,0 -0.633516,-9.977886 -2.217306,-12.353572 -1.583791,-2.375687 -3.801099,-3.959478 -3.801099,-3.959478 L 28.033104,17.89684 Z"
        id="path4" />
     <path
-       style="fill:#781515;fill-opacity:1;stroke-width:0.264999"
+       style="fill:#781515;stroke-width:0.264999;fill-opacity:1"
        d="m 49.572663,22.806593 3.167584,3.64272 3.64272,-3.167583 -4.276238,-3.167582 z"
        id="path5" />
     <rect

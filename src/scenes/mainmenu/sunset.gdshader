@@ -26,8 +26,8 @@ void fragment() {
 	
     // Use the drawn Red channel as X, and our animated uniform row as Y
     // We add a tiny 0.5 offset to read precisely from the center of the palette pixel
-    vec2 palette_uv = vec2(encoded_color.r, (palette_row_index + 0.5) / total_rows);
-    vec2 palette_uv_next = vec2(encoded_color.r, (next_row + 0.5) / total_rows);
+    vec2 palette_uv = vec2(encoded_color.r, (palette_row_index + 0.5) / 4.0);
+    vec2 palette_uv_next = vec2(encoded_color.r, (next_row) / 4.0);
 	
     // Sample the real color from the palette map
     vec4 base_color = texture(palette_texture, palette_uv);

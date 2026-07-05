@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cy2kygsnty484" path="res://scenes/room/room.gd" id="1_8xru0"]
 [ext_resource type="Texture2D" uid="uid://u0n7ux2ewc60" path="res://scenes/room/assets/Fond.png" id="2_kxljb"]
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
+[ext_resource type="Texture2D" uid="uid://c5ch0knftjj2h" path="res://scenes/room/assets/wall.png" id="3_p8057"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
 [ext_resource type="Texture2D" uid="uid://18y3lcnb82lu" path="res://scenes/room/assets/split-screen-human.png" id="5_7jj40"]
 [ext_resource type="FontFile" uid="uid://domukga160pa0" path="res://fonts/expanded/zxSpectrumExpanded.woff" id="5_68b7a"]
@@ -13,6 +14,12 @@
 [ext_resource type="AudioStream" uid="uid://jiwtvqnovyve" path="res://scenes/room/assets/game_start.wav" id="11_ip1yl"]
 [ext_resource type="AudioStream" uid="uid://fgqjlvyj6eia" path="res://scenes/room/assets/ready.wav" id="12_v5g04"]
 [ext_resource type="AudioStream" uid="uid://bxqf764xlm87u" path="res://scenes/room/assets/fight.wav" id="13_jp1e5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8057"]
+blend_mode = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3yv3j"]
+diffuse_texture = ExtResource("3_p8057")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vaubn"]
 friction = 0.0
@@ -312,8 +319,14 @@ script = ExtResource("1_8xru0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318848514]
 modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
-z_index = -10
+z_index = -11
 texture = ExtResource("2_kxljb")
+
+[node name="Wall" type="Sprite2D" parent="." unique_id=134659996]
+modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
+z_index = -10
+material = SubResource("CanvasItemMaterial_p8057")
+texture = SubResource("CanvasTexture_3yv3j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
 

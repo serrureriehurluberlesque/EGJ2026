@@ -15,7 +15,30 @@ var animation_to_play := 'stand_down'
 
 signal bit
 
-func get_input():
+
+func _process(delta):
+	if is_attacking:
+		move_animation(direction, Vector2())
+	else:
+		move_animation(direction, velocity)
+
+func _physics_process(delta):
+	if not Globals.started or is_attacking:
+		return
+
+	get_move_input()
+	move_and_slide()
+	for body in $Area2D.get_overlapping_bodies():
+		if "slow" in body:
+			body.slow(velocity)
+
+func _input(event):
+	if not Globals.started:
+		return
+	if Input.is_action_pressed("hunter_attack"):
+		attack()
+
+func get_move_input():
 	var input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
 	if not input_direction:
 		input_direction = Vector2()
@@ -25,24 +48,6 @@ func get_input():
 	
 	direction = velocity.limit_length()
 
-func _process(delta):
-	if is_attacking:
-		move_animation(direction, Vector2())
-	else:
-		move_animation(direction, velocity)
-
-func _physics_process(delta):
-	if Globals.started and not is_attacking:
-		get_input()
-		move_and_slide()
-	for body in $Area2D.get_overlapping_bodies():
-		if "slow" in body:
-			body.slow(velocity)
-
-func _input(event):
-	if Input.is_action_pressed("hunter_attack"):
-		attack()
-		
 func attack():
 	$Attack.rotation = direction.angle() + PI / 2
 	$AnimationPlayer.play("slap" if velocity.length() > 0.3 else "selfslap")

@@ -10,7 +10,27 @@ var is_attacking = false
 
 signal slapped
 
-func get_input():
+func _physics_process(delta):
+	if not Globals.started:
+		return
+	get_move_input()
+	if velocity.length() > 0.5:
+		print("start")
+		if not $AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.play(randf() * 10.0)
+	else:
+		print("stop")
+		$AudioStreamPlayer2D.stop()
+		
+	move_and_slide()
+
+func _input(event):
+	if not Globals.started:
+		return
+	if Input.is_action_pressed("ms_attack"):
+		attack()
+		
+func get_move_input():
 	var input_direction = Input.get_vector("ms_left", "ms_right", "ms_up", "ms_down")
 	if is_attacking:
 		input_direction = Vector2()
@@ -22,23 +42,6 @@ func get_input():
 	previous_velocity = velocity
 	human_velocity = Vector2(0, 0)
 	near_human = false
-
-func _physics_process(delta):
-	if Globals.started:
-		get_input()
-		if velocity.length() > 0.5:
-			print("start")
-			if not $AudioStreamPlayer2D.is_playing():
-				$AudioStreamPlayer2D.play(randf() * 10.0)
-		else:
-			print("stop")
-			$AudioStreamPlayer2D.stop()
-			
-		move_and_slide()
-
-func _input(event):
-	if Input.is_action_pressed("ms_attack"):
-		attack()
 		
 func attack():
 	if not is_attacking:

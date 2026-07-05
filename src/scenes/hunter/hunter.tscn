@@ -22,9 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dxdmldrdnxu2s" path="res://scenes/hunter/assets/ch_going_up_1.png" id="14_xuy88"]
 [ext_resource type="Texture2D" uid="uid://bu72sxiei3fy8" path="res://scenes/hunter/assets/ch_going_up_2.png" id="15_jjx5t"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2810g"]
-radius = 11.0
-
 [sub_resource type="Animation" id="Animation_2810g"]
 length = 0.001
 tracks/0/type = "value"
@@ -391,8 +388,8 @@ animations = [{
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146538190]
-shape = SubResource("CircleShape2D_2810g")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=145765138]
+polygon = PackedVector2Array(-6, -1, -4, -10, 0.5, -11, 5, -10, 7, -1, 5, 0, 7, 2, 7, 5, 6, 5, 5, 10, 3, 10, 0.5, 10, -2, 10, -4, 10, -4, 5, -6, 5, -6, 1, -4, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991883815]
 visible = false
@@ -426,13 +423,11 @@ texture = ExtResource("3_2810g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
 sprite_frames = SubResource("SpriteFrames_2gkgx")
-animation = &"getup"
-frame = 4
-frame_progress = 1.0
+animation = &"stand_right"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=128954093]
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1387766286]
-shape = SubResource("CircleShape2D_2810g")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1696207126]
+polygon = PackedVector2Array(-6, -1, -4, -10, 0.5, -11, 5, -10, 7, -1, 5, 0, 7, 2, 7, 5, 6, 5, 5, 10, 3, 10, 0.5, 10, -2, 10, -4, 10, -4, 5, -6, 5, -6, 1, -4, 0)

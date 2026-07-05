@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c87vdxv5xdnh2" path="res://scenes/hunter/hunter.gd" id="1_8d4pn"]
 [ext_resource type="Texture2D" uid="uid://k27prqi1to45" path="res://icon.svg" id="2_gr2o8"]
+[ext_resource type="Texture2D" uid="uid://xhpgbvxbweqa" path="res://scenes/room/assets/light.png" id="2_pi752"]
 [ext_resource type="Texture2D" uid="uid://ce7gotx5xf8km" path="res://scenes/hunter/hand.png" id="3_2810g"]
 [ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_p7r7f"]
 [ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
@@ -387,6 +388,10 @@ animations = [{
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
 script = ExtResource("1_8d4pn")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1748253959]
+range_z_max = 10
+texture = ExtResource("2_pi752")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=145765138]
 polygon = PackedVector2Array(-6, -1, -4, -10, 0.5, -11, 5, -10, 7, -1, 5, 0, 7, 2, 7, 5, 6, 5, 5, 10, 3, 10, 0.5, 10, -2, 10, -4, 10, -4, 5, -6, 5, -6, 1, -4, 0)

@@ -266,6 +266,7 @@ _data = {
 script = ExtResource("1_8xru0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1318848514]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
 z_index = -10
 texture = ExtResource("2_kxljb")
 
@@ -334,6 +335,7 @@ physics_material_override = SubResource("PhysicsMaterial_vaubn")
 shape = SubResource("WorldBoundaryShape2D_68b7a")
 
 [node name="Controls" type="Control" parent="." unique_id=847588465]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

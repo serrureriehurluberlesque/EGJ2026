@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://bkt1akhru3p0v" path="res://scenes/mainmenu/sunset.gdshader" id="1_oktx4"]
 [ext_resource type="Texture2D" uid="uid://b6o7r3chfj4ih" path="res://scenes/mainmenu/assets/palette_sunset.png" id="2_fi8nj"]
 [ext_resource type="Texture2D" uid="uid://d14okkijvrd28" path="res://scenes/mainmenu/assets/landscapeUV.png" id="3_ckupo"]
+[ext_resource type="Texture2D" uid="uid://dy8ocgkrt1nge" path="res://scenes/mainmenu/assets/title.png" id="5_2x7eg"]
 [ext_resource type="AudioStream" uid="uid://egsfvl0qpqqc" path="res://scenes/mainmenu/assets/quena_loop.mp3" id="5_xyqql"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2gkgx"]
@@ -98,17 +99,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="Labels" unique_id=570917503]
-layout_mode = 0
-offset_left = -16.0
-offset_top = -46.0
-offset_right = 107.0
-offset_bottom = -5.0
-theme_override_colors/font_color = Color(0.89748, 0.70432156, 0.48537415, 1)
-theme_override_font_sizes/font_size = 24
-text = "Mash'tout 
-pique'tout"
-
 [node name="StartLabel" type="RichTextLabel" parent="Labels" unique_id=1196051337]
 layout_mode = 1
 anchors_preset = 5
@@ -120,7 +110,15 @@ offset_right = 61.0
 offset_bottom = 93.0
 grow_horizontal = 2
 bbcode_enabled = true
-text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0]- SPACE to start -[/pulse]"
+text = "[pulse freq=1.0 color=#ffffff00 ease=-2.0][color=#e9d4b5]- SPACE to start -[/color][/pulse]"
+
+[node name="Title" type="TextureRect" parent="Labels" unique_id=414999449]
+layout_mode = 0
+offset_left = -24.0
+offset_top = -46.0
+offset_right = 96.0
+offset_bottom = -4.0
+texture = ExtResource("5_2x7eg")
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1160991323]
 stream = ExtResource("5_xyqql")

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
 [ext_resource type="Texture2D" uid="uid://c5ch0knftjj2h" path="res://scenes/room/assets/wall.png" id="3_p8057"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
+[ext_resource type="Texture2D" uid="uid://cgowwtuk34kbg" path="res://scenes/room/assets/windows.png" id="4_p8057"]
 [ext_resource type="Texture2D" uid="uid://18y3lcnb82lu" path="res://scenes/room/assets/split-screen-human.png" id="5_7jj40"]
 [ext_resource type="FontFile" uid="uid://domukga160pa0" path="res://fonts/expanded/zxSpectrumExpanded.woff" id="5_68b7a"]
 [ext_resource type="Texture2D" uid="uid://drd8c6uxonf4u" path="res://scenes/room/assets/character_large.png" id="5_w7vtx"]
@@ -327,6 +328,13 @@ modulate = Color(0.1254902, 0.1254902, 0.1254902, 1)
 z_index = -10
 material = SubResource("CanvasItemMaterial_p8057")
 texture = SubResource("CanvasTexture_3yv3j")
+
+[node name="Window" type="Sprite2D" parent="." unique_id=2090829045]
+modulate = Color(0.5019608, 0.5019608, 0.5019608, 1)
+light_mask = 2
+visibility_layer = 2
+z_index = -9
+texture = ExtResource("4_p8057")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1470607396]
 

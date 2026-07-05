@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="EGJ2026"
-run/main_scene="uid://byyxa30868wrw"
+config/name="MASH TOUT PIQUE TOUT"
+run/main_scene="uid://bpiw8ympenvix"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

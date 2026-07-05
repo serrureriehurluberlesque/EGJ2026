@@ -15,6 +15,7 @@ var face_direction := "down"
 var animation_to_play := 'stand_down'
 var light_fluctuation_intensity = 0
 var light_fluctuation_color = 0
+var auto_move = null
 
 signal bit
 
@@ -36,46 +37,49 @@ func _process(delta):
 	
 
 func _physics_process(delta):
+	for body in $Area2D.get_overlapping_bodies():
+		if "slow" in body:
+			body.slow(velocity)
 	if is_attacking:
 		return
 	get_move_input()
 	move_and_slide()
-	for body in $Area2D.get_overlapping_bodies():
-		if "slow" in body:
-			body.slow(velocity)
 
 func _input(event):
-	if not Globals.started:
+	if not Globals.started or is_sleeping or auto_move:
 		return
 	if Input.is_action_pressed("hunter_attack"):
 		attack()
 
 func get_move_input():
-	if not Globals.started:
+	if is_sleeping:
 		return
-	var input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
-	if not input_direction:
-		input_direction = Vector2()
-		
-	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
+	var input_direction = Vector2()
+	if auto_move:
+		if (self.position - auto_move).length() < 3.0:
+			auto_move = null
+		else:
+			input_direction = auto_move - self.position
+	elif Globals.started:
+		input_direction = Input.get_vector("hunter_left", "hunter_right", "hunter_up", "hunter_down")
+		if not input_direction:
+			input_direction = Vector2()
+	
+	move(input_direction)
+
+func move(input_direction):
+	
+	velocity = (1 - acceleration_factor) * (input_direction.limit_length() * speed) + acceleration_factor * previous_velocity
 	previous_velocity = velocity
 	
 	direction = velocity.limit_length()
 
 func move_to(pos: Vector2):
-	direction = self.position.direction_to(pos)
-	print(direction)
-	move_and_slide()
+	auto_move = pos
 
 func attack():
 	$Attack.rotation = direction.angle() + PI / 2
 	$AnimationPlayer.play("slap" if velocity.length() > 0.3 else "selfslap")
-	#var anim: Animation = $AnimationPlayer.get_animation("slap")
-	#var track_index = anim.add_track(Animation.TYPE_VALUE)
-	#anim.track_set_path(track_index, "Area:position")
-	#anim.track_insert_key(track_index, 0.0, Vector2())
-	#var key_id: int = anim.track_find_key(track_index, 0.6)
-	#anim.track_insert_key(track_index, key_id, ATTACK_DELTA)
 
 func selfhit():
 	for body in $Attack/Area.get_overlapping_bodies():

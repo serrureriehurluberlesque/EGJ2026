@@ -47,7 +47,13 @@ func get_move_input():
 		
 	human_velocity = Vector2(0, 0)
 	near_human = false
-		
+
+func start_sound():
+	$AudioStreamPlayer2D.play(randf() * 10.0)
+	
+func stop_sound():
+	$AudioStreamPlayer2D.stop()
+
 func attack():
 	if not is_attacking:
 		$Attack.show()

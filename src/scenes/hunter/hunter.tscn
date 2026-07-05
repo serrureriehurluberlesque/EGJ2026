@@ -416,6 +416,8 @@ animations = [{
 }]
 
 [node name="Hunter" type="CharacterBody2D" unique_id=1841461092]
+light_mask = 2
+visibility_layer = 2
 z_index = 1
 script = ExtResource("1_8d4pn")
 
@@ -430,6 +432,8 @@ polygon = PackedVector2Array(-6, -1, -4, -10, 0.5, -11, 5, -10, 7, -1, 5, 0, 7, 
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1991883815]
 visible = false
+light_mask = 2
+visibility_layer = 2
 scale = Vector2(0.24921371, 0.24921371)
 texture = ExtResource("2_gr2o8")
 
@@ -461,6 +465,8 @@ texture = ExtResource("4_pi752")
 stream = ExtResource("5_pi752")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
+light_mask = 2
+visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_2gkgx")
 animation = &"getup"
 frame = 4

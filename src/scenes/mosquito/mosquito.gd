@@ -14,11 +14,6 @@ func _physics_process(delta):
 	if not Globals.started:
 		return
 	get_move_input()
-	if velocity.length() > 0.5:
-		if not $AudioStreamPlayer2D.is_playing():
-			$AudioStreamPlayer2D.play(randf() * 10.0)
-	else:
-		$AudioStreamPlayer2D.stop()
 		
 	move_and_slide()
 
@@ -36,8 +31,20 @@ func get_move_input():
 	
 	if near_human:
 		velocity = (human_velocity + 4 * velocity) / (1 + 4 * acceleration_factor)
-		
+	
+	var rel_vel = velocity
+	if near_human:
+		rel_vel -= human_velocity
+	
 	previous_velocity = velocity
+	
+	
+	if input_direction.length() > 0.1 or (not near_human and velocity.length() > 2.5):
+		if not $AudioStreamPlayer2D.is_playing():
+			$AudioStreamPlayer2D.play(randf() * 10.0)
+	else:
+		$AudioStreamPlayer2D.stop()
+		
 	human_velocity = Vector2(0, 0)
 	near_human = false
 		

@@ -11,6 +11,8 @@
 [ext_resource type="FontFile" uid="uid://ccy51dkjijaio" path="res://fonts/strictInverted/zxSpectrumStrictInverted.woff" id="7_68b7a"]
 [ext_resource type="Texture2D" uid="uid://ehgs8edn4tkh" path="res://scenes/room/assets/split-screen-mosquito.png" id="7_dv301"]
 [ext_resource type="AudioStream" uid="uid://jiwtvqnovyve" path="res://scenes/room/assets/game_start.wav" id="11_ip1yl"]
+[ext_resource type="AudioStream" uid="uid://fgqjlvyj6eia" path="res://scenes/room/assets/ready.wav" id="12_v5g04"]
+[ext_resource type="AudioStream" uid="uid://bxqf764xlm87u" path="res://scenes/room/assets/fight.wav" id="13_jp1e5"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vaubn"]
 friction = 0.0
@@ -165,6 +167,34 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ReadyPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VSSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ip1yl"]
 resource_name = "go"
@@ -258,11 +288,11 @@ tracks/6/keys = {
 tracks/7/type = "method"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("StartSound")
+tracks/7/path = NodePath("FightPlayer")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.35),
+"times": PackedFloat32Array(0.2),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0.0],
@@ -544,5 +574,11 @@ text = "VS"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1798792930]
 libraries/ = SubResource("AnimationLibrary_ip1yl")
 
-[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=282638211]
+[node name="VSSound" type="AudioStreamPlayer" parent="." unique_id=282638211]
 stream = ExtResource("11_ip1yl")
+
+[node name="ReadyPlayer" type="AudioStreamPlayer" parent="." unique_id=95903653]
+stream = ExtResource("12_v5g04")
+
+[node name="FightPlayer" type="AudioStreamPlayer" parent="." unique_id=251319909]
+stream = ExtResource("13_jp1e5")

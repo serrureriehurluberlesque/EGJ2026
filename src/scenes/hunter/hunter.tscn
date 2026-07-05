@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnakwbf73nn" path="res://scenes/hunter/assets/ch_standing_down.png" id="4_sd5u0"]
 [ext_resource type="Texture2D" uid="uid://bbmcamxvwrkcb" path="res://scenes/hunter/assets/ch_standing_left.png" id="5_fggcs"]
 [ext_resource type="Texture2D" uid="uid://bii4sk45a2sba" path="res://scenes/hunter/assets/sleeping1.png" id="5_m8gdn"]
+[ext_resource type="AudioStream" uid="uid://orsbx7lii8rh" path="res://scenes/hunter/assets/slap.mp3" id="5_pi752"]
 [ext_resource type="Texture2D" uid="uid://d2bukb81ha4i0" path="res://scenes/hunter/assets/ch_standing_right.png" id="6_5y8yd"]
 [ext_resource type="Texture2D" uid="uid://dsj5s7ngdqats" path="res://scenes/hunter/assets/sleeping2.png" id="6_imobt"]
 [ext_resource type="Texture2D" uid="uid://bjelgmfb7r5by" path="res://scenes/hunter/assets/getup_1.png" id="6_v44sy"]
@@ -162,6 +163,20 @@ tracks/5/keys = {
 "method": &"selfhit"
 }]
 }
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SlapSound")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_p7r7f"]
 resource_name = "slap"
@@ -238,6 +253,20 @@ tracks/5/keys = {
 "values": [{
 "args": [],
 "method": &"hit"
+}]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SlapSound")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
 }]
 }
 
@@ -420,6 +449,9 @@ texture = ExtResource("3_p7r7f")
 position = Vector2(-2.0000002, -3.0000005)
 scale = Vector2(0.12280703, 0.12280703)
 texture = ExtResource("3_2810g")
+
+[node name="SlapSound" type="AudioStreamPlayer" parent="Attack" unique_id=804615025]
+stream = ExtResource("5_pi752")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=532341357]
 sprite_frames = SubResource("SpriteFrames_2gkgx")

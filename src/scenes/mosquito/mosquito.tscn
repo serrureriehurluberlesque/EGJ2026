@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d3jrk27bknv8t" path="res://scenes/hunter/impact.png" id="3_7j1pm"]
 [ext_resource type="AudioStream" uid="uid://ctmld144jgufx" path="res://scenes/mosquito/assets/moustique.wav" id="4_umyxe"]
 [ext_resource type="AudioStream" uid="uid://8kpxwg4g8hd7" path="res://scenes/mosquito/assets/end_bite.wav" id="5_mkj86"]
-[ext_resource type="AudioStream" uid="uid://cs0q8ww5w7a5p" path="res://scenes/mosquito/assets/start_bite.wav" id="6_4350t"]
+[ext_resource type="AudioStream" uid="uid://bg2dspwrtpnxk" path="res://scenes/mosquito/assets/start_bite.mp3" id="6_mkj86"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3veov"]
 radius = 0.5
@@ -49,4 +49,5 @@ panning_strength = 6.0
 stream = ExtResource("5_mkj86")
 
 [node name="StartBite" type="AudioStreamPlayer" parent="." unique_id=696873920]
-stream = ExtResource("6_4350t")
+stream = ExtResource("6_mkj86")
+volume_db = -20.0

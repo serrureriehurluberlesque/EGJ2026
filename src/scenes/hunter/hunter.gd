@@ -70,7 +70,6 @@ func attack():
 
 func selfhit():
 	for body in $Attack/Area.get_overlapping_bodies():
-		print(body)
 		if "slap" in body:
 			body.slap()
 		if "self_slap" in body:
@@ -78,7 +77,6 @@ func selfhit():
 
 func hit():
 	for body in $Attack/Area.get_overlapping_bodies():
-		print(body)
 		if "slap" in body:
 			body.slap()
 
@@ -96,7 +94,6 @@ func main_direction_str(direction) -> String:
 	return face_direction
 
 func biten():
-	print("bitten")
 	bit.emit()
 
 func self_slap():

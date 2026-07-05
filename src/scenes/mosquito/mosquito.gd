@@ -15,11 +15,9 @@ func _physics_process(delta):
 		return
 	get_move_input()
 	if velocity.length() > 0.5:
-		print("start")
 		if not $AudioStreamPlayer2D.is_playing():
 			$AudioStreamPlayer2D.play(randf() * 10.0)
 	else:
-		print("stop")
 		$AudioStreamPlayer2D.stop()
 		
 	move_and_slide()
@@ -48,7 +46,7 @@ func attack():
 		$Attack.show()
 		is_attacking = true
 		$StartBite.play()
-		await get_tree().create_timer(0.9).timeout
+		await get_tree().create_timer(0.8).timeout
 		$Bite.play()
 		bit()
 		$Attack/Impact.show()
@@ -58,13 +56,11 @@ func attack():
 		is_attacking = false
 
 func bit():
-	print("bit")
 	for body in $Attack/Area.get_overlapping_bodies():
 		if "biten" in body:
 			body.biten()
 
 func slap():
-	print("slapped")
 	slapped.emit()
 
 func slow(v):

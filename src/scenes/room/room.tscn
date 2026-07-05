@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dp7se3j8m01dt" path="res://scenes/hunter/hunter.tscn" id="2_y1kpu"]
 [ext_resource type="Texture2D" uid="uid://c5ch0knftjj2h" path="res://scenes/room/assets/wall.png" id="3_p8057"]
 [ext_resource type="PackedScene" uid="uid://buwupwev8a40a" path="res://scenes/mosquito/mosquito.tscn" id="3_vaubn"]
-[ext_resource type="Texture2D" uid="uid://cgowwtuk34kbg" path="res://scenes/room/assets/windows.png" id="4_p8057"]
+[ext_resource type="Texture2D" uid="uid://cxocd2rddhtrg" path="res://scenes/room/assets/windows.png" id="4_p8057"]
 [ext_resource type="Texture2D" uid="uid://18y3lcnb82lu" path="res://scenes/room/assets/split-screen-human.png" id="5_7jj40"]
 [ext_resource type="FontFile" uid="uid://domukga160pa0" path="res://fonts/expanded/zxSpectrumExpanded.woff" id="5_68b7a"]
 [ext_resource type="Texture2D" uid="uid://drd8c6uxonf4u" path="res://scenes/room/assets/character_large.png" id="5_w7vtx"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://jiwtvqnovyve" path="res://scenes/room/assets/game_start.wav" id="11_ip1yl"]
 [ext_resource type="AudioStream" uid="uid://fgqjlvyj6eia" path="res://scenes/room/assets/ready.wav" id="12_v5g04"]
 [ext_resource type="AudioStream" uid="uid://bxqf764xlm87u" path="res://scenes/room/assets/fight.wav" id="13_jp1e5"]
+[ext_resource type="AudioStream" uid="uid://dl5gp5ew3ithu" path="res://scenes/room/assets/vs_impact.mp3" id="13_p8057"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p8057"]
 blend_mode = 1
@@ -178,7 +179,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ReadyPlayer")
+tracks/3/path = NodePath("ReadyVoice")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -196,7 +197,7 @@ tracks/4/path = NodePath("VSSound")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0.0],
@@ -296,7 +297,7 @@ tracks/6/keys = {
 tracks/7/type = "method"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("FightPlayer")
+tracks/7/path = NodePath("FightVoice")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -596,10 +597,13 @@ text = "VS"
 libraries/ = SubResource("AnimationLibrary_ip1yl")
 
 [node name="VSSound" type="AudioStreamPlayer" parent="." unique_id=282638211]
-stream = ExtResource("11_ip1yl")
+stream = ExtResource("13_p8057")
 
-[node name="ReadyPlayer" type="AudioStreamPlayer" parent="." unique_id=95903653]
+[node name="ReadyVoice" type="AudioStreamPlayer" parent="." unique_id=95903653]
 stream = ExtResource("12_v5g04")
 
-[node name="FightPlayer" type="AudioStreamPlayer" parent="." unique_id=251319909]
+[node name="FightVoice" type="AudioStreamPlayer" parent="." unique_id=251319909]
 stream = ExtResource("13_jp1e5")
+
+[node name="ReadyPlayer" type="AudioStreamPlayer" parent="." unique_id=1190122726]
+stream = ExtResource("11_ip1yl")

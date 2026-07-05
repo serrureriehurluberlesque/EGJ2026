@@ -86,6 +86,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../..:is_stun")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_fggcs"]
 resource_name = "selfslap"
@@ -177,6 +189,18 @@ tracks/6/keys = {
 "args": [0.0],
 "method": &"play"
 }]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../..:is_stun")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.4, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_p7r7f"]
@@ -347,6 +371,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 2.0,
+"texture": ExtResource("8_qwhmc")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_sd5u0")
+}],
+"loop": 0,
+"name": &"stun",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_sd5u0")
 }, {
@@ -468,9 +503,9 @@ stream = ExtResource("5_pi752")
 light_mask = 2
 visibility_layer = 2
 sprite_frames = SubResource("SpriteFrames_2gkgx")
-animation = &"getup"
-frame = 4
-frame_progress = 1.0
+animation = &"stun"
+frame = 1
+frame_progress = 0.35061288
 
 [node name="Area2D" type="Area2D" parent="." unique_id=128954093]
 collision_layer = 2

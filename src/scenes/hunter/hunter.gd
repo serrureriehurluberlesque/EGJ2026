@@ -10,6 +10,7 @@ var previous_velocity := Vector2(0, 0)
 
 @export var is_attacking = false
 @export var is_sleeping = false
+@export var is_stun = false
 
 var face_direction := "down"
 var animation_to_play := 'stand_down'
@@ -17,11 +18,14 @@ var light_fluctuation_intensity = 0
 var light_fluctuation_color = 0
 var auto_move = null
 
+
 signal bit
 
 
 func _process(delta):
 	if is_sleeping:
+		return
+	if is_stun:
 		return
 	if is_attacking:
 		move_animation(direction, Vector2())
@@ -111,6 +115,7 @@ func biten():
 
 func self_slap():
 	print("self-slapped")
+	$AnimatedSprite2D.play("stun")
 
 func sleep():
 	is_sleeping = true

@@ -30,7 +30,7 @@ func get_move_input():
 	velocity = (1 - acceleration_factor) * (input_direction * speed) + acceleration_factor * previous_velocity
 	
 	if near_human:
-		velocity = (human_velocity + 4 * velocity) / (1 + 4 * acceleration_factor)
+		velocity = (human_velocity + 6 * velocity) / (1 + 6 * acceleration_factor)
 	
 	var rel_vel = velocity
 	if near_human:

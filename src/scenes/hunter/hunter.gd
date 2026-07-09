@@ -44,8 +44,6 @@ func _physics_process(delta):
 	for body in $Area2D.get_overlapping_bodies():
 		if "slow" in body:
 			body.slow(velocity)
-	if is_attacking:
-		return
 	get_move_input()
 	move_and_slide()
 
@@ -69,6 +67,9 @@ func get_move_input():
 		if not input_direction:
 			input_direction = Vector2()
 	
+		if is_attacking:
+			input_direction = Vector2()
+	
 	move(input_direction)
 
 func move(input_direction):
@@ -82,8 +83,9 @@ func move_to(pos: Vector2):
 	auto_move = pos
 
 func attack():
-	$Attack.rotation = direction.angle() + PI / 2
-	$AnimationPlayer.play("slap" if velocity.length() > 0.3 else "selfslap")
+	if not is_attacking:
+		$Attack.rotation = direction.angle() + PI / 2
+		$AnimationPlayer.play("slap" if velocity.length() > 0.3 else "selfslap")
 
 func selfhit():
 	for body in $Attack/Area.get_overlapping_bodies():
@@ -114,7 +116,6 @@ func biten():
 	bit.emit()
 
 func self_slap():
-	print("self-slapped")
 	$AnimatedSprite2D.play("stun")
 
 func sleep():
